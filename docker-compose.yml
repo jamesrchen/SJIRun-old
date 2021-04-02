@@ -2,11 +2,12 @@ version: "3"
 
 services:
   server:
+    container_name: SJIrun_Server
     build: server/
 
     environment:
-      PORT: 8000
-      
+      PORT: 80
+
       APP_TITLE: ${APP_TITLE}
 
       CLIENT_URL: ${CLIENT_URL}
@@ -26,10 +27,11 @@ services:
       ADMIN_EMAILS: ${ADMIN_EMAILS}
 
     # Its syntax is as follows: exposed port:container
-    ports:
-      - 8000:8000
+    expose:
+      - 80
 
   client:
+    container_name: SJIRun_Client
     build:
       context: client/
       args:
@@ -39,10 +41,13 @@ services:
         GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID}
         STRAVA_CLIENT_ID: ${STRAVA_CLIENT_ID}
 
+    environment:
+      PORT: 80
+
     # The keyword 'network_mode' is used to define the network type.
     # Here we define that the container can access to the 'localhost' of the computer.
-    ports:
-      - 3000:80
+    expose:
+      - 80
 
     # 'client' service should wait until the 'server' service is ready.
     depends_on:
