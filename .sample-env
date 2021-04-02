@@ -1,0 +1,20 @@
+# VITE Environmental Variables ( prefix exposes it to vue app)
+
+APP_TITLE = SJIRun (PTB)
+
+CLIENT_URL = https://run.sji.one
+SERVER_URL = https://api.run.sji.one
+
+GOOGLE_CLIENT_ID = 
+GOOGLE_CLIENT_SECRET = 
+
+STRAVA_CLIENT_ID = 
+STRAVA_CLIENT_SECRET = 
+
+MONGO_PREFIX = 
+MONGO_URL = 
+MONGO_USER =
+MONGO_PASS =
+
+# Delimited by ","
+ADMIN_EMAILS = "chen.wei.en.james.ryan@sji.edu.sg, bernardteo@sji.edu.sg, acn@sji.edu.sg, asmah.hanim@sji.edu.sg, rene.loh@sji.edu.sg, loqman.alfaiz@sji.edu.sg, christopher.go@sji.edu.sg, nicholas.koh@sji.edu.sg, josephe@sji.edu.sg, mohamad.syaifudin@sji.edu.sg, arul@sji.edu.sg"

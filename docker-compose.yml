@@ -1,0 +1,50 @@
+version: "3"
+
+services:
+  server:
+    build: server/
+
+    environment:
+      PORT: 8000
+      
+      APP_TITLE: ${APP_TITLE}
+
+      CLIENT_URL: ${CLIENT_URL}
+      SERVER_URL: ${SERVER_URL}
+
+      GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID}
+      GOOGLE_CLIENT_SECRET: ${GOOGLE_CLIENT_SECRET}
+
+      STRAVA_CLIENT_ID: ${STRAVA_CLIENT_ID}
+      STRAVA_CLIENT_SECRET: ${STRAVA_CLIENT_SECRET}
+
+      MONGO_PREFIX: ${MONGO_PREFIX}
+      MONGO_URL: ${MONGO_URL}
+      MONGO_USER: ${MONGO_USER}
+      MONGO_PASS: ${MONGO_PASS}
+
+      ADMIN_EMAILS: ${ADMIN_EMAILS}
+
+    # Its syntax is as follows: exposed port:container
+    ports:
+      - 8000:8000
+
+  client:
+    build:
+      context: client/
+      args:
+        APP_TITLE: ${APP_TITLE}
+        CLIENT_URL: ${CLIENT_URL}
+        SERVER_URL: ${SERVER_URL}
+        GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID}
+        STRAVA_CLIENT_ID: ${STRAVA_CLIENT_ID}
+
+    # The keyword 'network_mode' is used to define the network type.
+    # Here we define that the container can access to the 'localhost' of the computer.
+    ports:
+      - 3000:80
+
+    # 'client' service should wait until the 'server' service is ready.
+    depends_on:
+      - server
+
