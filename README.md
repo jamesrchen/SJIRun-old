@@ -14,20 +14,22 @@ This project was made for the SJI PE Department:
 
 Check out our [Trello](https://trello.com/b/3QAwZ4sK/sji-virtual-run-walk)
 
-### Common
+### Components
+
+#### Common
 docker-compose.yml allows management of both server and client. `.env.local` is used for sensitive environmental variables in development
 
-### Server
+#### Server
 Handles callbacks, authentication, API Data retrieval and updating of DB. Usually hosted on api.domain.tld
 
-### Client
+#### Client
 Just a web interface. Usually hosted on domain.tld
 
 ### Building for production
 
 This project is meant to be run using docker containers and placed behind a reverse-proxy like Caddy or NGNIX to facilitate easier SSL Management (hence the lack of any ports exposed outside of linked machines)
 
-To link your services to a reverse proxy or to expose it straight from the container (not recommended), use a `docker-compose.override.yml`. [See more here](https://docs.docker.com/compose/extends/)
+#### Instructions:
 
 Clone the repo onto your server
 
@@ -36,6 +38,8 @@ Clone the repo onto your server
 Make sure to fill up .env (example in .sample-env)
 
 `cp .sample-env .env`
+
+To link your services to a reverse proxy or to expose it straight from the container (not recommended), use a `docker-compose.override.yml`. [See more here](https://docs.docker.com/compose/extends/)
 
 Docker compose will build and handle the rest
 
