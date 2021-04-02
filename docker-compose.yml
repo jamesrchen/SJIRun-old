@@ -26,7 +26,8 @@ services:
 
       ADMIN_EMAILS: ${ADMIN_EMAILS}
 
-    # Its syntax is as follows: exposed port:container
+    # Port syntax is as follows: (exposed port):(container)
+    # Exposed syntax is as follows: (container)
     expose:
       - 80
 
@@ -42,14 +43,13 @@ services:
         STRAVA_CLIENT_ID: ${STRAVA_CLIENT_ID}
 
     environment:
-      PORT: 80
+      PORT: 80 # Doesn't do anything, yet
 
-    # The keyword 'network_mode' is used to define the network type.
-    # Here we define that the container can access to the 'localhost' of the computer.
+    # Port syntax is as follows: (exposed port):(container)
+    # Exposed syntax is as follows: (container)
     expose:
       - 80
 
     # 'client' service should wait until the 'server' service is ready.
     depends_on:
       - server
-

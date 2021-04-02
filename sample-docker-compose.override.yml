@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  server:
+    networks:
+      - web_default
+
+  client:
+    networks:
+      - web_default
+
+networks:
+  web_default:
+    external: true
