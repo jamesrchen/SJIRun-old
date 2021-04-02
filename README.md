@@ -12,6 +12,15 @@ Handles callbacks, authentication, API Data retrieval and updating of DB. Usuall
 Just a web interface. Usually hosted on domain.tld
 
 ### Building for production
-Docker compose should handle most things, just make sure to fill up .env (example in .sample-env)
+Clone the repo onto your server
+
+`git clone git@github.com:unknownguy2002/SJIRun.git`
+
+Make sure to fill up .env (example in .sample-env)
+
+`cp .sample-env .env`
+
+Docker compose will build and handle the rest
 
 `docker-compose up`
+
