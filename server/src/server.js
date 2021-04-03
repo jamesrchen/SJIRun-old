@@ -76,6 +76,8 @@ app.use("/api", apiRoutes)
 app.use("/admin", adminRoutes)
 app.use("/callback", callbackRoutes)
 
+
+
 // Init database connection, then start listening on port
 mongoose
 	.connect(`${process.env.MONGO_PREFIX}${process.env.MONGO_URL}`, { 
@@ -87,8 +89,8 @@ mongoose
     useCreateIndex: true
   })
 	.then(() => {
-    app.listen(8000 || process.env.PORT, () => {
-      console.log(`Listening on port ${8000 || process.env.PORT}`)
+    app.listen(process.env.PORT || 8000, () => {
+      console.log(`Listening on port ${process.env.PORT || 8000}`)
     });
 	})
   .catch((err) => {

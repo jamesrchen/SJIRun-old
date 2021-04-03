@@ -2,7 +2,7 @@ version: "3"
 
 services:
   server:
-    container_name: SJIrun_Server
+    container_name: SJIRun_Server
     build: server/
 
     environment:
