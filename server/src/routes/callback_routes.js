@@ -1,3 +1,5 @@
+// These routes are used for handling OAuth Callbacks, i.e google authentication / strava authorization
+
 const express = require('express'),
     router = express.Router();
 const fetch = require('node-fetch')

@@ -1,5 +1,5 @@
 <template>
-    <Button @click="stravaLogin()" label="Strava Authentication" icon="pi pi-map" iconPos="left" class="p-button-raised" style="background-color:var(--orange-500);" />
+  <Button @click="stravaLogin()" label="Strava Authentication" icon="pi pi-map" iconPos="left" class="p-button-raised" style="background-color:var(--orange-500);" />
 </template>
 
 <script>

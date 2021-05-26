@@ -1,3 +1,5 @@
+// Routes for internal api
+
 let express = require('express'),
     router = express.Router();
 
@@ -15,6 +17,13 @@ router
     }
 
     const user = await User.findOne({email: req.session.email})
+
+    if(!user) {
+      req.session.email = null // Remove session if user has no DB entry, yet has a session TODO: wait this should never happen
+      res.json({})
+      return
+    }
+
     res.json({
       "email": user.email,
       "full_name": user.full_name,

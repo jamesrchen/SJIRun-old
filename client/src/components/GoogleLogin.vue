@@ -1,5 +1,5 @@
 <template>
-    <Button @click="googleLogin()" label="Google Authentication" icon="pi pi-google" iconPos="left" class="p-button-raised" style="background-color:var(--green-400);" />
+  <Button @click="googleLogin()" label="Google Authentication" icon="pi pi-google" iconPos="left" class="p-button-raised" style="background-color:var(--green-400);" />
 </template>
 
 <script>

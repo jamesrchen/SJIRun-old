@@ -1,7 +1,0 @@
-{
-  "name": "SJIRun",
-  "comment": "This is here to trick my vue validator",
-  "dependencies": {
-    "vue": "^3.0.4"
-  }
-}

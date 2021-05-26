@@ -1,16 +1,23 @@
 # SJIRun
+
+## Attention: As of now, this repository is unmaintained
+
 Created by https://sji.one
 
 ### Goal
 
 This project was made for the SJI PE Department:
-> Students will participate in the walk/run on their own time and pace outside of curriculum and CCA time (...) Each student is challenged to complete 169 km from 15  to 3 September 2021.
+> Students will participate in the walk/run on their own time and pace outside of curriculum and CCA time (...) Each student is challenged to complete 169 km from [start date] to [end date]
 
-### Roadmap and features
+### Important features roadmap
 
 - [x] Leaderboard (90%)
+- [ ] Gmail workspace constraints
+- [ ] Start and end time
 - [ ] Admin interface
 - [ ] Public Api
+- [ ] Tests!
+  - Need to figure out how to mock MongoDB
 
 Check out our [Trello](https://trello.com/b/3QAwZ4sK/sji-virtual-run-walk)
 
@@ -39,7 +46,9 @@ Make sure to fill up .env (example in .sample-env)
 
 `cp .sample-env .env`
 
-To link your services to a reverse proxy or to expose it straight from the container (not recommended), use a `docker-compose.override.yml`. [See more here](https://docs.docker.com/compose/extends/)
+To link your services to a reverse proxy (SSL Management) or to expose it straight from the container (not recommended), use a `docker-compose.override.yml`. [See more here](https://docs.docker.com/compose/extends/)
+
+For the purposes of this project, I already have a sample override file `docker-compose.sample-override.yml`, you may want to copy this sample and configure it for your needs
 
 Docker compose will build and handle the rest
 

@@ -1,3 +1,5 @@
+# Sample docker-compose override, you can use this to configure your networks, open ports, etc.
+
 version: "3"
 
 services:
